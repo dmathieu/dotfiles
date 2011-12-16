@@ -86,3 +86,18 @@ imap <right> <nop>
 
 " BEEEEEPPPP
 set visualbell
+
+function s:setupWrapping()
+  set wrap
+  set wrapmargin=2
+  set textwidth=72
+endfunction
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile
+{Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+
+" add json syntax highlighting
+au BufNewFile,BufRead *.json set ft=javascript
+
+au BufRead,BufNewFile *.txt call s:setupWrapping()
