@@ -69,3 +69,7 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 " Use modeline overrides
 set modeline
 set modelines=10
+
+" NERDTree configuration
+let NERDTreeIgnore=['\.rbc$', '\~$']
+map <Leader>n :NERDTreeToggle<CR>
