@@ -100,3 +100,5 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=r
 au BufNewFile,BufRead *.json set ft=javascript
 
 au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+set guioptions-=T
