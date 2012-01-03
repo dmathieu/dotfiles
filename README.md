@@ -1,7 +1,7 @@
 # dotfiles
 
 ## Install
-curl https://raw.github.com/cesario/dotfiles/master/bootstrap.sh -o - | sh
+curl https://raw.github.com/dmathieu/dotfiles/master/bootstrap.sh -o - | sh
 
 ## Description
 
