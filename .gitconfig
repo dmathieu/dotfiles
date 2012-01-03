@@ -1,6 +1,6 @@
 [user]
-  name = Franck Verrot
-  email = franck@verrot.fr
+  name = Damien Mathieu
+  email = 42@dmathieu.com
 [color]
   ui = auto
 [color "branch"]
@@ -35,6 +35,7 @@
   whitespace = red reverse
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = ~/.gitignore
 [merge]
   tool = mvim
 [mergetool "mvim"]
