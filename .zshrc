@@ -10,6 +10,7 @@ plugins=(git rails)
 source $ZSH/oh-my-zsh.sh
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:~/Development/Scala/play-2.0-RC3 # Add play to PATH
 
 export EDITOR=mvim
 export LC_CTYPE=en_US.UTF-8
