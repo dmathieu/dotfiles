@@ -9,6 +9,8 @@ plugins=(git rails)
 
 source $ZSH/oh-my-zsh.sh
 
+PATH=/usr/local/bin:$PATH:/usr/local/sbin
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:~/Development/Scala/play-2.0-RC3 # Add play to PATH
 PATH=$PATH:~/Development/android-sdk/tools:~/Development/android-sdk/platform-tools # Add android SDK to PATH
