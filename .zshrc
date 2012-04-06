@@ -13,5 +13,7 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:~/Development/Scala/play-2.0-RC3 # Add play to PATH
 PATH=$PATH:~/Development/android-sdk/tools:~/Development/android-sdk/platform-tools # Add android SDK to PATH
 
+PATH=$PATH:/usr/local/sbin
+
 export EDITOR=mvim
 export LC_CTYPE=en_US.UTF-8
