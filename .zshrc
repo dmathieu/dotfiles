@@ -20,3 +20,5 @@ PATH=$PATH:/usr/local/sbin
 
 export EDITOR=mvim
 export LC_CTYPE=en_US.UTF-8
+
+git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --"
