@@ -14,7 +14,7 @@ PATH=/usr/local/bin:$PATH:/usr/local/sbin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:~/Development/Scala/play-2.0-RC3 # Add play to PATH
 PATH=$PATH:~/Development/android-sdk/tools:~/Development/android-sdk/platform-tools # Add android SDK to PATH
-export DYLD_LIBRARY_PATH=/Applications/Postgres.app/Contents/MacOS/lib/:$DYLD_LIBRARY_PATH
+export PATH=/Library/PostgreSQL/9.1/bin:$PATH # Add the postgres current version bin to PATH
 
 PATH=$PATH:/usr/local/sbin
 
