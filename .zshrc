@@ -5,7 +5,7 @@ ZSH_THEME="robbyrussell"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git rails)
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 
 source $ZSH/oh-my-zsh.sh
 
