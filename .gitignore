@@ -1,5 +1,2 @@
-.DS_Store
-*.swp
-public/stylesheets/*
-public/javascripts/*
-public/assets/*
+sublime2/User/Package\ Control.sublime-settings
+vim/vim.symlink/.netrwhist
