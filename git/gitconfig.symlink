@@ -8,7 +8,7 @@
         name = Damien Mathieu
         email = 42@dmathieu.com
 [credential]
-        helper = osxkeychain
+        helper = /opt/boxen/bin/boxen-git-credential
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
@@ -21,8 +21,8 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
-        editor = vim
+        excludesfile = /opt/boxen/config/git/gitignore
+        editor = mvim
 [apply]
         whitespace = nowarn
 [mergetool]
