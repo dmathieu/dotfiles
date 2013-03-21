@@ -21,7 +21,7 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = /opt/boxen/config/git/gitignore
+        excludesfile = ~/.gitignore
         editor = mvim
 [apply]
         whitespace = nowarn
