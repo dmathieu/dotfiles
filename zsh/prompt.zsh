@@ -62,18 +62,14 @@ node_prompt(){
 # command line. I filter it to only count those tagged as "+next", so it's more
 # of a motivation to clear out the list.
 todo(){
-  if $(which todo.sh &> /dev/null)
+  if (( $+commands[todo.sh] ))
   then
-    num=$(echo $(todo.sh ls +next | wc -l))
+    num=$(echo $(todo.sh ls | wc -l))
     let todos=num-2
     if [ $todos != 0 ]
     then
       echo "$todos"
-    else
-      echo ""
     fi
-  else
-    echo ""
   fi
 }
 
