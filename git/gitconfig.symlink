@@ -7,8 +7,6 @@
 [user]
         name = Damien Mathieu
         email = 42@dmathieu.com
-[credential]
-        helper = /opt/boxen/bin/boxen-git-credential
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
@@ -31,3 +29,9 @@
         prompt = false
 [help]
         autocorrect = 1
+
+[push]
+        default = simple
+
+[url "https://"]
+        insteadOf = git://
