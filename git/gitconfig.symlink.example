@@ -5,13 +5,15 @@
 [hub]
         protocol = https
 [user]
-        name = Damien Mathieu
-        email = 42@dmathieu.com
+        name = AUTHORNAME
+        email = AUTHOREMAIL
+[credential]
+        helper = GIT_CREDENTIAL_HELPER
 [alias]
         co = checkout
         promote = !$ZSH/bin/git-promote
         wtf     = !$ZSH/bin/git-wtf
-        rank-contributers = !$ZSH/bin/git-rank-contributers
+        rank-contributors = !$ZSH/bin/git-rank-contributors
         count   = !git shortlog -sn
 [color]
         diff = auto
@@ -29,9 +31,7 @@
         prompt = false
 [help]
         autocorrect = 1
-
 [push]
-        default = simple
-
+        default = matching
 [url "https://"]
         insteadOf = git://
