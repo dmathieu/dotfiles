@@ -1,0 +1,2 @@
+export HEROKU_USE_SPECIAL_SUDO_TOKEN=1
+ulimit -n 2048
