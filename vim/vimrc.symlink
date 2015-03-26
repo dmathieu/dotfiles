@@ -117,3 +117,6 @@ nnoremap <c-l> <c-w>l
 
 " Map CtrlP
 let g:ctrlp_map = '<c-p>'
+
+" Consider characters after 80 as errors
+match ErrorMsg '\%>80v.\+'
