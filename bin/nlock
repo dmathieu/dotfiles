@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# If the file has stuff in it
+if [ -s ~/.netrc ]; then
+        echo Backing up old encrypted file
+        mv ~/.netrc.gpg ~/.netrc.gpg.bak
+
+        echo Encrypting netrc file
+        gpg --armor --sign --encrypt -r 7D30EBF0 -u 7D30EBF0 -o ~/.netrc.gpg ~/.netrc
+
+        echo Comparing netrc file
+        if gpg -d ~/.netrc.gpg | diff ~/.netrc -; then
+                chmod 0600 ~/.netrc.gpg
+
+                echo Encryption successful, truncating old file
+                echo -n > ~/.netrc
+
+                # This step is so that nothing accidentally puts
+                # stuff in the file when it's `locked`
+                chmod 000 ~/.netrc
+        else
+                echo Encryption failed
+                exit 1
+        fi
+else
+        echo Decrypting netrc file
+        chmod 600 ~/.netrc
+        if ! gpg -d ~/.netrc.gpg > ~/.netrc; then
+                echo Failed to decrypt the file, locking
+                chmod 000 ~/.netrc
+        fi
+fi
