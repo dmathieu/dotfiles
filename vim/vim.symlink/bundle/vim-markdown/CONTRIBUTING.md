@@ -8,7 +8,7 @@ Every non local identifier must start with `g:vim_markdown_`.
 
 # Documentation
 
-Every new feature must be documented under in the [README.md](README.md). Documentation must be written in [GFM](https://help.github.com/articles/github-flavored-markdown) since Github itself is the primary to HTML converter used. In particular, remember that GFM adds line breaks at single newlines, so just forget about the 70 characters wide rule.
+Every new feature must be documented under in the [README.md](README.md). Documentation must be written in [GFM](https://help.github.com/articles/github-flavored-markdown) since GitHub itself is the primary to HTML converter used. In particular, remember that GFM adds line breaks at single newlines, so just forget about the 70 characters wide rule.
 
 # Markdown Flavors
 
@@ -28,22 +28,27 @@ There are many flavors of markdown, each one with an unique feature set. This pl
 
     Next, if there are many more than one Jekyll feature options, create a `g:vim_markdown_jekyll` option that turns them all on at once.
 
+# Style
+
+When choosing between multiple valid Markdown syntaxes, the default behavior must be that specified at: <http://www.cirosantilli.com/markdown-styleguide>
+
+If you wish to have a behavior that differs from that style guide, add an option to turn it on or off, and leave it off by default.
+
 # Tests
 
-All new features must have tests. While we don't require unit tests, which are too hard to do in certain cases, you should create a test under the `test/` directory with a predictable name which allows other users to quickly test your feature. Good tests should explain their expected input / output behavior. Failing test should be marked with `FAIL` somewhere near the test, possibly explaining why it fails. For example:
+All new features must have unit tests.
+
+# Issues
+
+Issues are tracked within GitHub.
+
+When reporting issues, your report is more effective if you include a minimal example file that reproduces the problem. Try to trim out as much as possible, until you have the smallest possible file that still reproduces the issue. Paste the example inline into your issue report, quoted using four spaces at the beginning of each line, like this example from issue [#189](https://github.com/plasticboy/vim-markdown/issues/189):
 
 ```
-## Links
+Minimal example:
 
-[Link text](link URL)
-
-... more correct link tests ...
-
-###### FAIL: should not be highlighted as a link
-
-Text (with parenthesis) alone should not be highlighted as a link. (Issue #57)
-
-... more failed link tests ...
-
-## Code Blocks
+    ```
+    =
+    ```
+    bad!
 ```
