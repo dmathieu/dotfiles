@@ -1,9 +1,22 @@
 set -g default-terminal "screen-256color"
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
 set -g mode-mouse on
+set-window-option -g window-status-current-bg yellow
 
 # remap prefix to Control + a
 set -g prefix C-a
 # bind 'C-a C-a' to type 'C-a'
 bind C-a send-prefix
 unbind C-b
+
+# Use alt+arrow keys to switch panes
+bind -n M-Left select-pane -L
+bind -n M-Right select-pane -R
+bind -n M-Up select-pane -U
+bind -n M-Down select-pane -D
+
+# Activity monitoring
+setw -g monitor-activity on
+set -g visual-activity on
+
+set -g status-right '📅 #(gcalcli --nostarted --calendar "" agenda --nocolor | cut -d " " -f 4- | head -2 | tail -1 | sed "s/^ *//g" | sed "s/    / /g" | cut -c1-19)'
