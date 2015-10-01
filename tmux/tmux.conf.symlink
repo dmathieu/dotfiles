@@ -1,7 +1,11 @@
 set -g default-terminal "screen-256color"
 set -g terminal-overrides 'xterm*:smcup@:rmcup@'
-set -g mode-mouse on
+set -g escape-time 1
+set -g base-index 1
+set -g pane-base-index 1
 set-window-option -g window-status-current-bg yellow
+
+set -g mode-mouse off
 
 # remap prefix to Control + a
 set -g prefix C-a
@@ -9,14 +13,68 @@ set -g prefix C-a
 bind C-a send-prefix
 unbind C-b
 
-# Use alt+arrow keys to switch panes
-bind -n M-Left select-pane -L
-bind -n M-Right select-pane -R
-bind -n M-Up select-pane -U
-bind -n M-Down select-pane -D
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+
+setw -g mode-keys vi
+
+bind \ split-window -h -c '#{pane_current_path}'
+bind - split-window -v -c '#{pane_current_path}'
+
+bind c new-window -c '#{pane_current_path}'
+
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+
+bind -r C-h select-window -t :-
+bind -r C-l select-window -t :+
+
+bind H resize-pane -L 5
+bind J resize-pane -D 5
+bind K resize-pane -U 5
+bind L resize-pane -R 5
+
+set -g status-fg white
+set -g status-bg black
+
+setw -g window-status-fg cyan
+setw -g window-status-bg default
+setw -g window-status-attr dim
+
+setw -g window-status-current-fg white
+setw -g window-status-current-bg red
+setw -g window-status-current-attr bright
+
+set -g pane-border-fg green
+set -g pane-border-bg black
+set -g pane-active-border-fg white
+set -g pane-active-border-bg yellow
+
+set -g message-fg white
+set -g message-bg black
+set -g message-attr bright
+
+# Bind select/copy/paste in vi mode
+unbind [
+bind Escape copy-mode
+unbind ]
+bind p run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
+
+bind -t vi-copy 'v' begin-selection
+bind -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
+
+unbind -t vi-copy Enter
+bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # Activity monitoring
 setw -g monitor-activity on
 set -g visual-activity on
+
+set -g status-justify centre
+set -g status-utf8 on
+
+set -g status-left-length 40
+set -g status-left '#[fg=green]#S #[fg=yellow]#I.#[fg=cyan]#P'
 
 set -g status-right '📅 #(gcalcli --nostarted --calendar "" agenda --nocolor | cut -d " " -f 4- | head -2 | tail -1 | sed "s/^ *//g" | sed "s/    / /g" | cut -c1-19)'
