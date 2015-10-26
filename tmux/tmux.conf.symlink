@@ -77,4 +77,4 @@ set -g status-utf8 on
 set -g status-left-length 40
 set -g status-left '#[fg=green]#S #[fg=yellow]#I.#[fg=cyan]#P'
 
-set-option -g status-right "📅  #(gcalcli agenda --nocolor --calendar "damien@heroku.com" | head -2 | tail -1)#[default]"
+set-option -g status-right "📅  #(gcalcli agenda --nostarted --nocolor --calendar "damien@heroku.com" | head -2 | tail -1)#[default]"
