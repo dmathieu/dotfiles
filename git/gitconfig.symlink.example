@@ -33,3 +33,5 @@
         insteadOf = git://
 [init]
 	templatedir = ~/.git_template
+[commit]
+	template = ~/.gitemplate
