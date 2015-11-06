@@ -48,6 +48,17 @@ setup_gitconfig () {
   fi
 }
 
+setup_gemrc () {
+  if ! [ -f ruby/gemrc.symlink ]
+  then
+    info 'setup gemrc'
+
+    cp ruby/gemrc.symlink.example ruby/gemrc.symlink
+
+    success 'gemrc'
+  fi
+}
+
 link_files () {
   ln -s $1 $2
   success "linked $1 to $2"
@@ -121,6 +132,7 @@ install_dotfiles () {
 }
 
 setup_gitconfig
+setup_gemrc
 install_dotfiles
 
 # If we're on a Mac, let's install and setup homebrew.
