@@ -5,7 +5,7 @@ set -g base-index 1
 set -g pane-base-index 1
 set-window-option -g window-status-current-bg yellow
 
-set -g mode-mouse off
+set -g mouse off
 
 # remap prefix to Control + a
 set -g prefix C-a
