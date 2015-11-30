@@ -1,10 +1,10 @@
-export SRCPATH=~/src
+export CODEPATH=~/code
 
 function project() {
   users=(heroku dmathieu)
 
   for user in $users; do
-    dir=$SRCPATH"/github.com/"$user"/"$1
+    dir=$CODEPATH"/src/github.com/"$user"/"$1
 
     if [[ -d $dir ]]; then
       cd $dir
@@ -18,7 +18,7 @@ function project() {
     code=`curl -n -o /dev/null --silent --head --write-out '%{http_code}\n' $apiUri`
 
     if [[ $code == 200 ]]; then
-      dir=$SRCPATH"/github.com/"$user"/"$1
+      dir=$CODEPATH"/src/github.com/"$user"/"$1
       git clone $gitUri $dir
       cd $dir
       return
