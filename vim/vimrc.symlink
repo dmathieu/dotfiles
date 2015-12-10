@@ -1,6 +1,5 @@
-" Pathogen manages the bundles
-call pathogen#infect()
-set nocompatible
+" Plugins are managed by vundle
+source ~/.vundle
 
 syntax enable
 filetype plugin indent on
