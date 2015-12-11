@@ -17,6 +17,7 @@ function project() {
 
       if [[ -d $dir ]]; then
         cd $dir
+        git checkout master
         gclean
         return
       fi
