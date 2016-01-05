@@ -4,38 +4,33 @@ function project() {
   users=(heroku dmathieu)
 
   if [ ${1[(ws:/:)1]} != ${1[(ws:/:)2]} ]; then
-    stickyUser=${1[(ws:/:)1]}
+    users=(${1[(ws:/:)1]})
     projectName=${1[(ws:/:)2]}
   else
-    stickyUser=
     projectName=$1
   fi
 
   for user in $users; do
-    if [[ -z $stickyUser || $stickyUser == $user ]]; then
-      dir=$CODEPATH"/src/github.com/"$user"/"$projectName
+    dir=$CODEPATH"/src/github.com/"$user"/"$projectName
 
-      if [[ -d $dir ]]; then
-        cd $dir
-        git checkout master
-        gclean
-        return
-      fi
+    if [[ -d $dir ]]; then
+      cd $dir
+      git checkout master
+      gclean
+      return
     fi
   done
 
   for user in $users; do
-    if [[ -z $stickyUser || $stickyUser == $user ]]; then
-      apiUri="https://api.github.com/repos/"$user"/"$projectName
-      gitUri="https://github.com/"$user"/"$projectName".git"
-      code=`curl -n -o /dev/null --silent --head --write-out '%{http_code}\n' $apiUri`
+    apiUri="https://api.github.com/repos/"$user"/"$projectName
+    gitUri="https://github.com/"$user"/"$projectName".git"
+    code=`curl -n -o /dev/null --silent --head --write-out '%{http_code}\n' $apiUri`
 
-      if [[ $code == 200 ]]; then
-        dir=$CODEPATH"/src/github.com/"$user"/"$projectName
-        git clone $gitUri $dir
-        cd $dir
-        return
-      fi
+    if [[ $code == 200 ]]; then
+      dir=$CODEPATH"/src/github.com/"$user"/"$projectName
+      git clone $gitUri $dir
+      cd $dir
+      return
     fi
   done
 
