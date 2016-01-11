@@ -73,8 +73,9 @@ set -g visual-activity on
 
 set -g status-justify centre
 set -g status-utf8 on
+set -g status-interval 1
 
 set -g status-left-length 40
-set -g status-left '#[fg=green]#S #[fg=yellow]#I.#[fg=cyan]#P'
+set -g status-left "#[fg=green]#(zsh -c 'source $ZSH/zsh/project.zsh; projectName #{pane_current_path}')"
 
 set-option -g status-right "📅  #(gcalcli agenda --nostarted --nocolor --calendar "damien@heroku.com" | head -2 | tail -1)#[default]"
