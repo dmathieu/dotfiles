@@ -16,7 +16,7 @@ function projectName() {
 }
 
 function project() {
-  users=(heroku dmathieu)
+  users=($(ls $CODEPATH/src/github.com))
 
   if [ ${1[(ws:/:)1]} != ${1[(ws:/:)2]} ]; then
     users=(${1[(ws:/:)1]})
