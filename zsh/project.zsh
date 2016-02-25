@@ -30,8 +30,12 @@ function project() {
 
     if [[ -d $dir ]]; then
       cd $dir
-      git checkout master
-      gclean
+
+      if [[ $* != *-s* ]]; then
+        git checkout master
+        gclean
+      fi
+
       return
     fi
   done
