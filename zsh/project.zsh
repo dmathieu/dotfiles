@@ -16,6 +16,7 @@ function projectName() {
 }
 
 function project() {
+  me=dmathieu
   users=($(ls $CODEPATH/src/github.com))
 
   if [ ${1[(ws:/:)1]} != ${1[(ws:/:)2]} ]; then
@@ -23,6 +24,23 @@ function project() {
     name=${1[(ws:/:)2]}
   else
     name=$1
+  fi
+
+  if [[ $* == *-n* ]]; then
+    if [[ ${#users[@]} > 1 ]]; then
+      user=$me
+    else
+      user=$users
+    fi
+
+    dir=$CODEPATH"/src/github.com/"$user"/"$name
+
+    echo "Initializing new project "$user"/"$name
+    mkdir $dir
+    cd $dir
+    git init
+
+    return
   fi
 
   for user in $users; do
