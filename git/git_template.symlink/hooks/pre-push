@@ -1,17 +1,19 @@
 #!/bin/bash
 
-protected_branch='master'
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+protected_branch='refs/heads/master'
 
-if [ $protected_branch = $current_branch ]
-then
+while read local_ref local_sha remote_ref remote_sha
+do
+  if [[ $local_ref = $protected_branch ]]
+  then
     read -p "You're about to push master, is that what you intended? [y|n] " -n 1 -r < /dev/tty
     echo
     if echo $REPLY | grep -E '^[Yy]$' > /dev/null
     then
-        exit 0 # push will execute
+      exit 0 # push will execute
     fi
     exit 1 # push will not execute
-else
+  else
     exit 0 # push will execute
-fi
+  fi
+done
