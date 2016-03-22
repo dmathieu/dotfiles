@@ -19,7 +19,7 @@ function project() {
   me=dmathieu
   users=($(ls $CODEPATH/src/github.com))
 
-  if [ ${1[(ws:/:)1]} != ${1[(ws:/:)2]} ]; then
+  if [ $1 =~ .*/.* ]; then
     users=(${1[(ws:/:)1]})
     name=${1[(ws:/:)2]}
   else
