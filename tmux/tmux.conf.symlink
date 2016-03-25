@@ -78,4 +78,4 @@ set -g status-interval 1
 set -g status-left-length 40
 set -g status-left "#[fg=green]#(zsh -c 'source $ZSH/zsh/project.zsh; projectName #{pane_current_path}')"
 
-set-option -g status-right "📅  #(gcalcli agenda --nostarted --nocolor --calendar "damien@heroku.com" | head -2 | tail -1)#[default]"
+set-option -g status-right "📅  #(gcalcli agenda --nostarted --nocolor --calendar "damien@heroku.com" --nodeclined | head -2 | tail -1)#[default]"
