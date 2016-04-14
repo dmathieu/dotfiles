@@ -1,10 +1,16 @@
 #!/bin/sh
 
 for FILE in `git diff HEAD --name-only`; do
-    grep 'TODO' $FILE 2>&1 >/dev/null
-    if [ $? -eq 0 ]; then
-        echo $FILE ' contains TODO'
-        exit 1
+  grep 'TODO' $FILE 2>&1 > /dev/null
+  if [ $? -eq 0 ]; then
+    echo $FILE " contains a TODO"
+    read -p "Do you want to continue? [y|n] " -n 1 -r < /dev/tty
+    echo
+    if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+    then
+      exit 0
     fi
+    exit 1
+  fi
 done
 exit
