@@ -3,3 +3,9 @@ if [[ ! -d ./vim/vim.symlink/bundle/Vundle.vim/.git ]]; then
 fi
 
 vim +PluginInstall +qall
+
+(
+  cd ~/.vim/bundle/command-t/ruby/command-t
+  ruby extconf.rb
+  make
+)
