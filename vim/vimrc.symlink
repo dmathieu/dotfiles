@@ -4,6 +4,8 @@ source ~/.vundle
 syntax enable
 filetype plugin indent on
 
+let mapleader = ','
+
 " Nice colors
 set background=dark
 colorscheme solarized
