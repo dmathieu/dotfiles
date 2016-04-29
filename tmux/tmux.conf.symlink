@@ -80,6 +80,6 @@ set -g status-utf8 on
 set -g status-interval 1
 
 set -g status-left-length 40
-set -g status-left "#[fg=green]#(zsh -c pesto)"
+set -g status-left "#[fg=green]#(pesto)"
 
 set-option -g status-right "📅  #(gcalcli agenda --nostarted --nocolor --calendar "damien@heroku.com" --nodeclined | head -2 | tail -1)#[default]"

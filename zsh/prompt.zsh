@@ -38,7 +38,13 @@ versions_prompt() {
 }
 
 directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+  dname=$(projectName)
+  if [[ $dname == "N/A" ]]
+  then
+    dname="%1/%\/"
+  fi
+
+  echo "%{$fg_bold[cyan]%}${dname}%{$reset_color%}"
 }
 
 cloud_name() {
