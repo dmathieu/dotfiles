@@ -1,7 +1,2 @@
-.DS_Store
-.svn
 .env
-*~
-*.swp
-*.rbc
-.ruby-version
+.DS_Store
