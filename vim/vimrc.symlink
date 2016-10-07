@@ -1,5 +1,6 @@
 " Plugins are managed by vundle
 source ~/.vundle
+source ~/.fzf
 
 syntax enable
 filetype plugin indent on

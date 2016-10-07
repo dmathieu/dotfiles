@@ -20,7 +20,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-markdown'
 Plugin 'sickill/vim-pasta'
 Plugin 'elixir-lang/vim-elixir'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 
 " All of your Plugins must be added before the following line
