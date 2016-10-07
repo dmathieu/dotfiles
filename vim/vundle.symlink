@@ -8,18 +8,19 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Language plugins
+Plugin 'fatih/vim-go'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+Plugin 'elixir-lang/vim-elixir'
+
 Plugin 'victormours/better-writing.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/syntastic'
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-endwise'
-Plugin 'fatih/vim-go'
-Plugin 'pangloss/vim-javascript'
-Plugin 'tpope/vim-markdown'
 Plugin 'sickill/vim-pasta'
-Plugin 'elixir-lang/vim-elixir'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
