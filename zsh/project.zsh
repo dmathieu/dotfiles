@@ -26,7 +26,7 @@ function project() {
     name=$1
   fi
 
-  if [[ $* == *-n* ]]; then
+  if [[ $* == *\ -n* ]]; then
     if [[ ${#users[@]} > 1 ]]; then
       user=$me
     else
@@ -49,7 +49,7 @@ function project() {
     if [[ -d $dir ]]; then
       cd $dir
 
-      if [[ $* != *-s* ]]; then
+      if [[ $* != *\ -s* ]]; then
         git checkout master
         gclean
       fi
