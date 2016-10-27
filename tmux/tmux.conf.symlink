@@ -55,17 +55,16 @@ set -g message-fg white
 set -g message-bg black
 set -g message-attr bright
 
-# Bind select/copy/paste in vi mode
 unbind [
 bind Escape copy-mode
 unbind ]
+
+# Bind select/copy/paste in vi mode
+set -g default-command "reattach-to-user-namespace -l zsh"
+
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-pipe "reattach-to-user-namespace pbcopy"
 bind p run "reattach-to-user-namespace pbpaste | tmux load-buffer - && tmux paste-buffer"
-
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-pipe "reattach-to-user-namespace pbcopy"
-
-unbind -t vi-copy Enter
-bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 
 # Activity monitoring
 setw -g monitor-activity on
