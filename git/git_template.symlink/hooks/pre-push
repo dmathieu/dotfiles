@@ -2,9 +2,12 @@
 
 protected_branch='refs/heads/master'
 
+remote=$2
+protected_service=*github*
+
 while read local_ref local_sha remote_ref remote_sha
 do
-  if [[ $local_ref = $protected_branch ]]
+  if [[ $local_ref = $protected_branch ]]  && [[ $remote == $protected_service ]]
   then
     read -p "You're about to push master, is that what you intended? [y|n] " -n 1 -r < /dev/tty
     echo
