@@ -5,6 +5,8 @@ set -g base-index 1
 set -g pane-base-index 1
 set-window-option -g window-status-current-bg yellow
 
+set-option -g renumber-windows on
+
 set -g mouse off
 
 # remap prefix to Control + a
