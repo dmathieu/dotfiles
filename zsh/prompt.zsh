@@ -19,7 +19,7 @@ cloud_name() {
   fi
 }
 
-export PROMPT=$'\n$(directory_name) $(cloud_name)› '
+export PROMPT=$'$(cloud_name)\n$(directory_name)› '
 export PROMPT="$PROMPT\$(git-radar --zsh --fetch) "
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
