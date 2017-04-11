@@ -23,6 +23,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'sickill/vim-pasta'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'joukevandermaas/vim-ember-hbs'
 
 
 " All of your Plugins must be added before the following line
