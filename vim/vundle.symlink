@@ -13,6 +13,8 @@ Plugin 'fatih/vim-go'
 Plugin 'pangloss/vim-javascript'
 Plugin 'tpope/vim-markdown'
 Plugin 'elixir-lang/vim-elixir'
+Plugin 'fatih/vim-hclfmt'
+Plugin 'joukevandermaas/vim-ember-hbs'
 
 Plugin 'victormours/better-writing.vim'
 Plugin 'Yggdroot/indentLine'
@@ -23,8 +25,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'sickill/vim-pasta'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-Plugin 'joukevandermaas/vim-ember-hbs'
-Plugin 'fatih/vim-hclfmt'
+Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
