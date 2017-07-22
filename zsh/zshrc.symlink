@@ -31,3 +31,10 @@ then
   tmux attach-session -t "$USER" || tmux new-session -s "$USER"
   exit
 fi
+
+
+if uname | grep -q "Darwin"; then
+  source ~/.zsh-macosx
+else
+  source ~/.zsh-linux
+fi
