@@ -2,7 +2,7 @@
         protocol = https
 [user]
         name = AUTHORNAME
-        email = AUTHOREMAIL
+        email = AUTHORWORKEMAIL
 [credential]
         helper = GIT_CREDENTIAL_HELPER
 [alias]
@@ -35,3 +35,5 @@
 	templatedir = ~/.git_template
 [commit]
 	template = ~/.gitemplate
+[alias]
+	home = config --local user.email "AUTHORHOMEEMAIL"
