@@ -17,6 +17,7 @@ function projectName() {
 
 function project() {
   me=dmathieu
+  work=heroku
   users=($(ls $CODEPATH/src/github.com))
 
   if [[ $1 =~ .*/.* ]]; then
@@ -66,7 +67,12 @@ function project() {
     if [[ $code == 200 ]]; then
       dir=$CODEPATH"/src/github.com/"$user"/"$name
       git clone $gitUri $dir
+
       cd $dir
+      if [ $user != $work ]; then
+        git home
+      fi
+
       return
     fi
   done
