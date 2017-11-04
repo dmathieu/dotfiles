@@ -6,11 +6,13 @@
 # to make sure you're on the latest and greatest.
 export ZSH=$HOME/.dotfiles
 
-# Set OS X defaults
-$ZSH/osx/set-defaults.sh
-
-# Upgrade homebrew
-brew update
-
-# Install homebrew packages
-$ZSH/homebrew/install.sh 2>&1
+if uname | grep -q "Darwin"; then
+  # Set OS X defaults
+  $ZSH/osx/set-defaults.sh
+  # Upgrade homebrew
+  brew update
+  # Install homebrew packages
+  $ZSH/homebrew/install.sh 2>&1
+else
+  # TODO: setup on linux
+fi
