@@ -1,0 +1,4 @@
+#!/bin/zsh
+context="${$(kubectl config current-context 2>/dev/null):-None}"
+namespace="${$(kubectl config view --minify --output 'jsonpath={..namespace}'):-default}"
+echo "⎈  ${context}:${namespace}"
