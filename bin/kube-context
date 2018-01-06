@@ -1,4 +1,4 @@
 #!/bin/zsh
 context="${$(kubectl config current-context 2>/dev/null):-None}"
 namespace="${$(kubectl config view --minify --output 'jsonpath={..namespace}'):-default}"
-echo -e "#[fg=colour69]⎈  #[fg=red]${context}:#[fg=cyan]${namespace}"
+echo -e "#[fg=colour69]⎈  #[fg=red]${context}#[fg=white]:#[fg=cyan]${namespace}"
