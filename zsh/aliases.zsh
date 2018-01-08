@@ -17,6 +17,20 @@ alias gc='git commit -e '
 alias k='kubectl'
 alias kc='kubectl config use-context'
 
+cluster() {
+  cluster=$(echo $1 | cut -d ':' -f 1)
+  namespace=${$(echo $1 | cut -d ':' -f 2):-default}
+
+  if [[ "$namespace" == "$cluster" ]]; then
+    namespace="default"
+  fi
+
+  if [[ "$cluster" != "" ]]; then
+    kubectl config use-context $cluster
+  fi
+
+  kubectl config set-context $(kubectl config current-context) --namespace=$namespace
+}
 
 #
 # Heroku aliases
