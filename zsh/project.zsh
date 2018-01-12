@@ -41,6 +41,10 @@ function project() {
     cd $dir
     git init
 
+    if [ $user != $work ]; then
+      git home
+    fi
+
     return
   fi
 
