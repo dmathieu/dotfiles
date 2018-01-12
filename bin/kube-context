@@ -2,4 +2,4 @@
 length=15
 context=$(echo "${$(kubectl config current-context 2>/dev/null):-None}" | cut -c 1-$length)
 namespace=$(echo "${$(kubectl config view --minify --output 'jsonpath={..namespace}'):-default}" | cut -c 1-$length)
-echo -e "#[fg=colour69]⎈  #[fg=red]${context}#[fg=white]:#[fg=cyan]${namespace}"
+echo -e "#[fg=colour69]⎈  #[fg=red]${context}#[fg=white]:#[fg=cyan]${namespace}#[fg=white]"
