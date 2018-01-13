@@ -22,10 +22,6 @@ for config_file ($ZSH/**/completion.zsh) source $config_file
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-# nvm
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
-
 if [[ "$TERM" != "screen-256color" ]]
 then
   tmux attach-session -t "$USER" || tmux new-session -s "$USER"
