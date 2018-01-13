@@ -1,5 +1,4 @@
 alias reload!='. ~/.zshrc'
-alias vim="/usr/local/bin/vim"
 
 #
 # GIT aliases
