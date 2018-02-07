@@ -141,12 +141,15 @@ install_dotfiles
 if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
-  if . bin/dot > /tmp/dotfiles-dot 2>&1
-  then
-    success "dependencies installed"
-  else
-    fail "error installing dependencies"
-  fi
+  # Set OS X defaults
+  $ZSH/osx/set-defaults.sh
+  # Upgrade homebrew
+  brew update
+  # Install homebrew packages
+  brew install vim \
+    michaeldfallen/formula/git-radar \
+    rbenv \
+    reattach-user-namespace
 fi
 
 echo ''
