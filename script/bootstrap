@@ -149,7 +149,8 @@ then
   brew install vim \
     michaeldfallen/formula/git-radar \
     rbenv \
-    reattach-user-namespace
+    reattach-user-namespace \
+    git-secrets
 fi
 
 echo ''
