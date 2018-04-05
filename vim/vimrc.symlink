@@ -110,6 +110,10 @@ let g:go_template_autocreate = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
+" configure syntastic for rust.vim
+let g:syntastic_rust_checkers = ['rustc']
+let g:rustfmt_autosave = 1
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1

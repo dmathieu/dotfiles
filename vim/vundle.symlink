@@ -15,6 +15,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-hclfmt'
 Plugin 'joukevandermaas/vim-ember-hbs'
+Plugin 'rust-lang/rust.vim'
 
 Plugin 'victormours/better-writing.vim'
 Plugin 'Yggdroot/indentLine'
