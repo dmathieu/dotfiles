@@ -1,1 +1,2 @@
 export PATH=$PATH:$HOME/.git-radar
+export PATH=$PATH:~/go/1.10/bin
