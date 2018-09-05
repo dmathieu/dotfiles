@@ -10,12 +10,6 @@ alias gclean="git pull origin --rebase; git branch --merged | grep -v \"\*\" | x
 alias gpu='git push origin -u `git rev-parse --abbrev-ref HEAD`'
 alias gc='git commit -e '
 
-#
-# Kubernetes aliases
-#
-alias k='kubectl'
-alias kc='kubectl config use-context'
-
 cluster() {
   cluster=$(echo $1 | cut -d ':' -f 1)
   namespace=${$(echo $1 | cut -d ':' -f 2):-default}
