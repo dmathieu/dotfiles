@@ -16,6 +16,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-hclfmt'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'rust-lang/rust.vim'
+Plugin 'sirtaj/vim-openscad'
 
 Plugin 'victormours/better-writing.vim'
 Plugin 'Yggdroot/indentLine'
