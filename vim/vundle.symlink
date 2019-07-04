@@ -17,6 +17,7 @@ Plugin 'fatih/vim-hclfmt'
 Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'rust-lang/rust.vim'
 Plugin 'sirtaj/vim-openscad'
+Plugin 'jparise/vim-graphql'
 
 Plugin 'victormours/better-writing.vim'
 Plugin 'Yggdroot/indentLine'
