@@ -3,5 +3,3 @@ if [[ ! -d ./vim/vim.symlink/bundle/Vundle.vim/.git ]]; then
 fi
 
 vim +PluginInstall +qall
-
-go get golang.org/x/tools/cmd/goimports

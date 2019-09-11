@@ -133,6 +133,10 @@ install_dotfiles () {
   done
 }
 
+brew_install() {
+  brew list $1 &>/dev/null || brew install $1
+}
+
 setup_gitconfig
 setup_gemrc
 install_dotfiles
@@ -142,22 +146,25 @@ if [ "$(uname -s)" == "Darwin" ]
 then
   info "installing dependencies"
   # Set OS X defaults
-  $ZSH/osx/set-defaults.sh
+  ./osx/set-defaults.sh
   # Upgrade homebrew
   brew update
   # Install homebrew packages
-  brew install vim \
-    michaeldfallen/formula/git-radar \
-    rbenv \
-    reattach-to-user-namespace \
-    git-secrets \
-    go
+  brew_install vim
+  brew_install michaeldfallen/formula/git-radar
+  brew_install rbenv
+  brew_install reattach-to-user-namespace
+  brew_install  git-secrets
+  brew_install  go
 fi
 
 info "installing go dependencies"
 go get golang.org/x/tools/cmd/goimports
-go get -u github.com/golang/lint/golint
-go get -u github.com/kisielk/errcheck
+go get golang.org/x/lint/golint
+go get github.com/kisielk/errcheck
+
+info "installing vim dependencies"
+./vim/install.sh
 
 echo ''
 echo '  All installed!'
