@@ -136,6 +136,8 @@ install_dotfiles () {
 brew_install() {
   brew list $1 &>/dev/null || brew install $1
 }
+info "installing oh-my-zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 setup_gitconfig
 setup_gemrc
