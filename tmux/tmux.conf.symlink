@@ -61,7 +61,7 @@ set -g status-interval 1
 set -g status-left-length 40
 set -g status-left ""
 
-set-option -g status-right "📅  #(gcalcli agenda --nostarted --nocolor --calendar "dmathieu@salesforce.com" --nodeclined | head -2 | tail -1)#[default]"
+set-option -g status-right "📅  #(gcalcli --nocolor agenda --nostarted --calendar="dmathieu@salesforce.com" --nodeclined | cut -d ' ' -f 2- | tr -s ' ' | head -2 | tail -1)#[default]"
 set-option -g status-left "#(kube-context)"
 
 if-shell "uname | grep -q Darwin" "source-file ~/.tmux-macosx" "source-file ~/.tmux-linux"
