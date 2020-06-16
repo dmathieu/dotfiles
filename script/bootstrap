@@ -155,6 +155,7 @@ then
   # Upgrade homebrew
   brew update
   # Install homebrew packages
+  brew_install tmux
   brew_install vim
   brew_install michaeldfallen/formula/git-radar
   brew_install rbenv
