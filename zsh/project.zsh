@@ -55,7 +55,12 @@ function project() {
       cd $dir
 
       if [[ $* != *\ -s* ]]; then
-        git checkout master
+        default_branch="master"
+        if [[ -n `git show-ref refs/heads/main` ]]; then
+          default_branch="main"
+        fi
+
+        git checkout $default_branch
         gclean
       fi
 
