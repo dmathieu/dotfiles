@@ -20,7 +20,7 @@ cloud_name() {
 }
 
 export PROMPT=$'$(cloud_name)\n$(directory_name)› '
-export PROMPT="$PROMPT\$(git-radar --zsh --fetch) "
+export PROMPT="$PROMPT\$(master_fire)\$(git-radar --zsh --fetch) "
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
@@ -28,4 +28,10 @@ set_prompt () {
 precmd() {
   title "zsh" "%m" "%55<...<%~"
   set_prompt
+}
+
+master_fire() {
+  if [[ `git symbolic-ref --short HEAD 2>/dev/null` == "master" ]]; then
+    echo "🔥"
+  fi
 }
