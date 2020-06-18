@@ -1,22 +1,24 @@
 #!/bin/bash
 
-protected_branch='refs/heads/master'
+protected_branches=(master main)
 
 remote=$2
 protected_service=*github*
 
-while read local_ref local_sha remote_ref remote_sha
-do
-  if [[ $local_ref = $protected_branch ]]  && [[ $remote == $protected_service ]]
-  then
-    read -p "You're about to push master, is that what you intended? [y|n] " -n 1 -r < /dev/tty
-    echo
-    if echo $REPLY | grep -E '^[Yy]$' > /dev/null
-    then
-      exit 0 # push will execute
+if [[ $remote != $protected_service ]]; then
+  exit 0
+fi
+
+while read local_ref local_sha remote_ref remote_sha; do
+  for i in "${protected_branches[@]}"; do
+    if [ "refs/heads/$i" == $local_ref ]; then
+      read -p "You're about to push the $i branch, is that what you intended? [y|n] " -n 1 -r < /dev/tty
+      echo
+      if echo $REPLY | grep -E '^[Yy]$' > /dev/null
+      then
+        exit 0 # push will execute
+      fi
+      exit 1 # push will not execute
     fi
-    exit 1 # push will not execute
-  else
-    exit 0 # push will execute
-  fi
+  done
 done
