@@ -162,12 +162,12 @@ then
   brew_install reattach-to-user-namespace
   brew_install  git-secrets
   brew_install  go
+  brew_install golangci/tap/golangci-lint
 fi
 
 info "installing go dependencies"
 go get golang.org/x/tools/cmd/goimports
 go get golang.org/x/lint/golint
-go get github.com/kisielk/errcheck
 
 info "installing vim dependencies"
 ./vim/install.sh
