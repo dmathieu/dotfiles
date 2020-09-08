@@ -111,7 +111,7 @@ let g:go_fmt_command = "goimports"
 let g:go_template_autocreate = 0
 let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
 let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
-let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " configure syntastic for rust.vim
 let g:syntastic_rust_rustc_exe = 'cargo check'
