@@ -34,6 +34,3 @@ if uname | grep -q "Darwin"; then
 else
   source ~/.zsh-linux
 fi
-
-# added by travis gem
-[ -f /home/dmathieu/.travis/travis.sh ] && source /home/dmathieu/.travis/travis.sh

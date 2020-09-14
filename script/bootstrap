@@ -160,9 +160,10 @@ then
   brew_install michaeldfallen/formula/git-radar
   brew_install rbenv
   brew_install reattach-to-user-namespace
-  brew_install  git-secrets
-  brew_install  go
+  brew_install git-secrets
+  brew_install go
   brew_install golangci/tap/golangci-lint
+  brew_install nvm
 fi
 
 info "installing go dependencies"
