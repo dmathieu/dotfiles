@@ -34,3 +34,6 @@ if uname | grep -q "Darwin"; then
 else
   source ~/.zsh-linux
 fi
+
+export WORKON_HOME=~/.virtualenvs
+[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
