@@ -40,7 +40,6 @@ function project() {
     mkdir $dir
     cd $dir
     git init
-    git checkout -b main
 
     if [ $user != $work ]; then
       git home
