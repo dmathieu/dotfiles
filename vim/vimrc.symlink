@@ -128,3 +128,5 @@ let g:syntastic_ruby_mri_exec = '~/.rbenv/shims/ruby'
 
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libc++'
+
+let g:languagetool_jar="/usr/local/opt/languagetool/libexec/languagetool-commandline.jar"

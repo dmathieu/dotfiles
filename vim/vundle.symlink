@@ -19,7 +19,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'jparise/vim-graphql'
 
-Plugin 'victormours/better-writing.vim'
+Plugin 'dpelle/vim-LanguageTool'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
 Plugin 'vim-syntastic/syntastic'
