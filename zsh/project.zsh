@@ -17,7 +17,7 @@ function projectName() {
 
 function project() {
   me=dmathieu
-  work=heroku
+  work=auth0
   users=($(ls $CODEPATH/src/github.com))
 
   if [[ $1 =~ .*/.* ]]; then
