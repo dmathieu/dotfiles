@@ -173,5 +173,9 @@ go get golang.org/x/lint/golint
 info "installing vim dependencies"
 ./vim/install.sh
 
+info "installing submodules"
+git submodule sync
+git submodule update --init
+
 echo ''
 echo '  All installed!'
