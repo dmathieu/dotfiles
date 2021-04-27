@@ -17,10 +17,11 @@ set number
 set ruler
 
 " Whitespace stuff
+set autoindent
 set wrap
 set tabstop=2
 set shiftwidth=2
-set expandtab
+set noexpandtab
 
 " Show “invisible” characters
 set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
