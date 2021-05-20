@@ -164,6 +164,7 @@ then
   brew_install go
   brew_install golangci/tap/golangci-lint
   brew_install nvm
+  brew_install direnv
 fi
 
 info "installing go dependencies"

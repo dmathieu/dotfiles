@@ -37,3 +37,4 @@ fi
 
 export WORKON_HOME=~/.virtualenvs
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+eval "$(direnv hook zsh)"
