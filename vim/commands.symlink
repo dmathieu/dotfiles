@@ -1,0 +1,2 @@
+:command SpellCheckFr :let g:languagetool_lang='fr' | :LanguageToolCheck
+:command SpellCheckEn :let g:languagetool_lang='en' | :LanguageToolCheck
