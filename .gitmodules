@@ -1,6 +1,3 @@
 [submodule "custom/plugins/zsh-iterm-touchbar"]
 	path = custom/plugins/zsh-iterm-touchbar
 	url = https://github.com/iam4x/zsh-iterm-touchbar.git
-[submodule "private"]
-	path = private
-	url = https://github.com/dmathieu/dotfiles.private
