@@ -37,7 +37,7 @@ function project() {
     dir=$CODEPATH"/src/github.com/"$user"/"$name
 
     echo "Initializing new project "$user"/"$name
-    mkdir $dir
+    mkdir -p $dir
     cd $dir
     git init
 
