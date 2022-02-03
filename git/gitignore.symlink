@@ -3,3 +3,6 @@
 *.sw*
 .env
 .env.test
+
+bench-main
+bench-branch
