@@ -8,6 +8,7 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C
 alias gclean="git pull origin --rebase; git branch --merged | grep -v \"\*\" | xargs -n 1 git branch -d"
 
 alias gpu='git push origin -u `git rev-parse --abbrev-ref HEAD`'
+alias gpdu='git push dmathieu -u `git rev-parse --abbrev-ref HEAD`'
 alias gc='git commit -e '
 
 cluster() {
