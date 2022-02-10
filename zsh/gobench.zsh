@@ -7,7 +7,7 @@ function gobench() {
 	if [ ! -f bench-main ]; then
 		if [[ $(git diff --stat) != '' ]]; then
 			echo "I need to run benchmarks on main, which requires a non-dirty repository"
-			exit 1
+			return 1
 		fi
 
 		echo "Running benchmarks on main branch"
