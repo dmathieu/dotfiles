@@ -1,7 +1,7 @@
 function gobench() {
 	branch=`git rev-parse --abbrev-ref HEAD`
 
-	if [[ $* != *\ -f* ]]; then
+	if [[ $* == *\ -f* ]]; then
 		rm bench-main
 	fi
 	if [ ! -f bench-main ]; then
