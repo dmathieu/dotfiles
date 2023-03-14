@@ -10,16 +10,7 @@ directory_name() {
   echo "%{$fg_bold[cyan]%}${dname}%{$reset_color%}"
 }
 
-cloud_name() {
-  if ! [[ -z $HEROKU_CLOUD ]]
-  then
-    echo "%{$fg_bold[blue]%}%{$HEROKU_CLOUD%}%{$reset_color%} "
-  else
-    echo ""
-  fi
-}
-
-export PROMPT=$'$(cloud_name)\n$(directory_name)› '
+export PROMPT=$'$(directory_name)› '
 export PROMPT="$PROMPT\$(master_fire)\$(git-radar --zsh --fetch) "
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
