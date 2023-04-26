@@ -36,5 +36,8 @@
 	defaultBranch = main
 [commit]
 	template = ~/.gitemplate
+	gpgsign = true
+[gpg]
+	format = ssh
 [alias]
 	home = config --local user.email "AUTHORHOMEEMAIL"
