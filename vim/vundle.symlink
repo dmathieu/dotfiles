@@ -18,6 +18,7 @@ Plugin 'joukevandermaas/vim-ember-hbs'
 Plugin 'rust-lang/rust.vim'
 Plugin 'sirtaj/vim-openscad'
 Plugin 'jparise/vim-graphql'
+Plugin 'cappyzawa/starlark.vim'
 
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'Yggdroot/indentLine'
