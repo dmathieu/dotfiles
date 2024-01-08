@@ -11,7 +11,10 @@ directory_name() {
 }
 
 export PROMPT=$'$(directory_name)› '
-export PROMPT="$PROMPT\$(master_fire)\$(git-radar --zsh --fetch) "
+if uname | grep -q "Darwin"; then
+	export PROMPT="$PROMPT\$(master_fire)\$(git-radar --zsh --fetch) "
+fi
+
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }
