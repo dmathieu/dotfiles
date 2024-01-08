@@ -3,7 +3,10 @@ export ZSH=$HOME/.dotfiles
 
 # source every .zsh file in this rep
 for config_file ($ZSH/**/*.zsh) source $config_file
-for config_file ($ZSH/private/**/*.zsh) source $config_file
+
+if uname | grep -q "Darwin"; then
+	for config_file ($ZSH/private/**/*.zsh) source $config_file
+fi
 
 # use .localrc for SUPER SECRET CRAP that you don't
 # want in your public, versioned repo.
