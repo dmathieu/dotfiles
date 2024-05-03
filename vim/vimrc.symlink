@@ -106,29 +106,11 @@ nnoremap <c-l> <c-w>l
 " Consider characters after 80 as errors
 match ErrorMsg '\%>80v.\+'
 
-" configure syntastic and go-vim
-let g:go_fmt_command = "goimports"
-let g:go_template_autocreate = 0
-let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
-let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
-"let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
+" configure ALE
+let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace']}
+let g:ale_linters = {'go': ['govet', 'golangci-lint', 'gofmt']}
 
-" configure syntastic for rust.vim
-let g:syntastic_rust_rustc_exe = 'cargo check'
-let g:syntastic_rust_rustc_fname = ''
-let g:syntastic_rust_rustc_args = '--'
-let g:syntastic_rust_checkers = ['rustc']
-let g:rustfmt_autosave = 1
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_balloons = 0
-
-let g:syntastic_ruby_mri_exec = '~/.rbenv/shims/ruby'
-
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++17 -stdlib=libc++'
+let g:ale_fix_on_save = 1
+let g:ale_go_golangci_lint_package = 1
 
 let g:languagetool_jar="/usr/local/opt/languagetool/libexec/languagetool-commandline.jar"

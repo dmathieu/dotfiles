@@ -23,14 +23,13 @@ Plugin 'cappyzawa/starlark.vim'
 Plugin 'dpelle/vim-LanguageTool'
 Plugin 'Yggdroot/indentLine'
 Plugin 'bling/vim-airline'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'dense-analysis/ale'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-endwise'
 Plugin 'sickill/vim-pasta'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'aars/syntastic-platformio'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
