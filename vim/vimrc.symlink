@@ -11,7 +11,7 @@ set clipboard=unnamed
 
 " Nice colors
 set background=dark
-let g:solarized_termcolors=256
+set termguicolors
 colorscheme solarized
 
 set number
