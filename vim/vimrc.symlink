@@ -106,6 +106,10 @@ nnoremap <c-l> <c-w>l
 " Consider characters after 80 as errors
 match ErrorMsg '\%>80v.\+'
 
+" configure go-vim
+let g:go_fmt_command = "goimports"
+let g:go_template_autocreate = 0
+
 " configure ALE
 let g:ale_fixers = {'*': ['remove_trailing_lines', 'trim_whitespace'], 'rust': ['rustfmt'], 'go': ['goimports', 'gofumpt', 'gopls', 'golines']}
 let g:ale_linters = {'go': ['golangci-lint'], 'ruby': ['rubocop'], 'rust': ['analyzer']}
