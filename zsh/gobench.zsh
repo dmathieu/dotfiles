@@ -1,5 +1,10 @@
 function gobench() {
 	branch=`git rev-parse --abbrev-ref HEAD`
+	if [[ "$1" != "" ]]; then
+		filter="$1"
+	else
+		filter="Benchmark"
+	fi
 
 	if [[ $* == *\ -f* ]]; then
 		rm bench-main
@@ -10,18 +15,18 @@ function gobench() {
 			return 1
 		fi
 
-		echo "Running benchmarks on main branch"
+		echo "Running $filter on main branch"
 		git checkout main
 		for _ in $(seq 10); do
-			go test -run Benchmark -bench=. ./... >> bench-main
+			go test -bench=$filter ./... >> bench-main
 		done
 	fi
 
-	echo "Running benchmarks on $branch"
+	echo "Running $filter on $branch"
 	git checkout $branch
 	rm bench-branch
 	for _ in $(seq 10); do
-		go test -run Benchmark -bench=. ./... >> bench-branch
+		go test -bench=$filter ./... >> bench-branch
 	done
 
 	echo "Running benchstat"
