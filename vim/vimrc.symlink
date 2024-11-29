@@ -12,7 +12,7 @@ set clipboard=unnamed
 " Nice colors
 set background=dark
 set termguicolors
-colorscheme solarized
+colorscheme embark
 
 set number
 set ruler
