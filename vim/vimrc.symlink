@@ -2,6 +2,7 @@
 source ~/.vundle
 source ~/.fzf
 source ~/.commands
+source ~/.private-vim
 
 syntax enable
 filetype plugin indent on
