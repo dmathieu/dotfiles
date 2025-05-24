@@ -69,11 +69,10 @@ function project() {
   done
 
   for user in $users; do
-    apiUri="https://api.github.com/repos/"$user"/"$name
-    gitUri="https://github.com/"$user"/"$name".git"
-    code=`curl -n -o /dev/null --silent --head --write-out '%{http_code}\n' $apiUri`
+    gitUri="https://github.com/"$user"/"$name
+    code=`curl -n -o /dev/null --silent --head --write-out '%{http_code}\n' $gitUri`
 
-    if [[ $code == 200 ]]; then
+    if [[ $code -lt 400 ]]; then
       dir=$CODEPATH"/src/github.com/"$user"/"$name
       git clone $gitUri $dir
 
