@@ -69,10 +69,10 @@ function project() {
   done
 
   for user in $users; do
-    gitUri="https://github.com/"$user"/"$name
-    code=`curl -n -o /dev/null --silent --head --write-out '%{http_code}\n' $gitUri`
+    gitUri="https://github.com/"$user"/"$name".git"
+    git ls-remote "$gitUri" >/dev/null 2>&1
 
-    if [[ $code -lt 400 ]]; then
+    if [[ $status -eq 0 ]]; then
       dir=$CODEPATH"/src/github.com/"$user"/"$name
       git clone $gitUri $dir
 
