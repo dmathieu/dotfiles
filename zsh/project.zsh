@@ -9,8 +9,8 @@ function projectName() {
   name="${project#$CODEPATH/src/}"
   name="${name#*/}"
 
-  if [[ $name = /* ]]; then
-    echo "N/A"
+  if [[ "/"$name = $project ]]; then
+    echo "${project##*/}"
   else
     echo $name
   fi
