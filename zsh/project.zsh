@@ -6,7 +6,8 @@ function projectName() {
   else
     project=`pwd`
   fi
-  name=${project##$CODEPATH/src/github.com/}
+  name="${project#$CODEPATH/src/}"
+  name="${name#*/}"
 
   if [[ $name = /* ]]; then
     echo "N/A"
